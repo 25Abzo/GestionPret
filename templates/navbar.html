@@ -1,0 +1,11 @@
+<nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="{{ url_for('index') }}" class="text-white text-xl font-bold">Gestion des Prêts</a>
+        <div class="space-x-4">
+            <a href="{{ url_for('ajouter_client_form') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ajouter un Client</a>
+            <a href="{{ url_for('enregistrer_pret_form') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Enregistrer un Prêt</a>
+            <a href="{{ url_for('liste_clients') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Liste des Clients</a>
+            <a href="{{ url_for('liste_prets') }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Liste des Prêts</a>
+        </div>
+    </div>
+</nav>

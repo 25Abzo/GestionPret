@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Prêts</title>
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    {% include 'navbar.html' %}
+    <h1 class="text-2xl font-bold mb-4">Liste des Prêts</h1>
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="py-2 px-4 border">ID Prêt</th>
+                    <th class="py-2 px-4 border">Nom Client</th>
+                    <th class="py-2 px-4 border">Prénom Client</th>
+                    <th class="py-2 px-4 border">Montant</th>
+                    <th class="py-2 px-4 border">Taux</th>
+                    <th class="py-2 px-4 border">Durée</th>
+                    <th class="py-2 px-4 border">Mensualité</th>
+                    <th class="py-2 px-4 border">Date d'Accord</th>
+                    <th class="py-2 px-4 border">Jour d'Exigibilité</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pret in prets %}
+                <tr>
+                    <td class="py-2 px-4 border">{{ pret[0] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[1] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[2] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[3] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[4] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[5] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[6] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[7] }}</td>
+                    <td class="py-2 px-4 border">{{ pret[8] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ url_for('index') }}" class="text-blue-500 underline">Retour à l'accueil</a>
+</body>
+</html>

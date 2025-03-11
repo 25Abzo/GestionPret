@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Clients</title>
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    {% include 'navbar.html' %}
+    <h1 class="text-2xl font-bold mb-4">Liste des Clients</h1>
+    <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-300">
+            <thead>
+                <tr class="bg-gray-200">
+                    <th class="py-2 px-4 border">ID Client</th>
+                    <th class="py-2 px-4 border">Nom</th>
+                    <th class="py-2 px-4 border">Prénom</th>
+                    <th class="py-2 px-4 border">Adresse</th>
+                    <th class="py-2 px-4 border">Statut</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                <tr>
+                    <td class="py-2 px-4 border">{{ client[0] }}</td>
+                    <td class="py-2 px-4 border">{{ client[1] }}</td>
+                    <td class="py-2 px-4 border">{{ client[2] }}</td>
+                    <td class="py-2 px-4 border">{{ client[3] }}</td>
+                    <td class="py-2 px-4 border">{{ client[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="{{ url_for('index') }}" class="text-blue-500 underline">Retour à l'accueil</a>
+</body>
+</html>

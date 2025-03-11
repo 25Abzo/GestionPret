@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+    <link href="{{ url_for('static', filename='css/output.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-6">
+    {% include 'navbar.html' %}
+    <h1 class="text-2xl font-bold mb-4">Prêt enregistré avec succès</h1>
+    <a href="{{ url_for('index') }}" class="text-blue-500 underline">Retour à l'accueil</a>
+</body>
+</html>
